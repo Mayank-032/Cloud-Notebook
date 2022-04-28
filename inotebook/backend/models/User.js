@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
-const userSchema = new Schema({
+const { Schema } = mongoose;
+
+const userSchema = new Schema({ // creating schema, means how user data must look like in database when entered
     name:{
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
 
     email:{
@@ -14,7 +17,6 @@ const userSchema = new Schema({
     password:{
         type: String,
         required: true,
-        unique: true
     },
 
     date:{
